@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ProfileName">
+        <item name="android:textColor">@color/colorTitle</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="attNameText">
+        <item name="android:textColor">@color/colorAttName</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="attValueText">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/colorAttValue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
 </resources>
