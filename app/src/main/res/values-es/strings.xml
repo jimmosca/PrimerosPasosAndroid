@@ -1,0 +1,5 @@
+<resources>
+    <string name="increment_button">Incrementar valor</string>
+    <string name="hello_kotlin">Hola Kotlin!!!</string>
+    <string name="base_text">Numero de veces que has pulsado el boton:</string>
+</resources>
