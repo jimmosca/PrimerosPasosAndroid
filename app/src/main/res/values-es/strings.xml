@@ -5,4 +5,5 @@
     <string name="birth_date">Fecha de nacimiento</string>
     <string name="city">Ciudad</string>
     <string name="profile_photo">Foto de perfil</string>
+    <string name="go_to_profile">Ir al perfil</string>
 </resources>
