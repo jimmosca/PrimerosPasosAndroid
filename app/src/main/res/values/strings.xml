@@ -2,5 +2,5 @@
     <string name="app_name" translatable="false">FirstSteps_CasadoJaime</string>
     <string name="increment_button">Increment value</string>
     <string name="hello_kotlin">Hello Kotlin!!!</string>
-    <string name="base_text">Number of times you pressed the button:</string>
+    <string name="base_text">Number of times you pressed the button: %d</string>
 </resources>

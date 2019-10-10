@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
         btnIncrease = findViewById(R.id.btnIncrease)
         txtCount = findViewById(R.id.txtCount)
 
-        var count: Int = 0
+        var count = 0
 
         btnIncrease.setOnClickListener {
            changeText(count++)
         }
     }
     private fun changeText(timesPressed: Int) {
-        val baseText: String = getString(R.string.base_text)
-        txtCount.text = "$baseText $timesPressed"
+        val message: String = getString(R.string.base_text, timesPressed)
+        txtCount.text = message
     }
 }
