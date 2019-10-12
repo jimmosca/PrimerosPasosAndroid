@@ -4,86 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
-    android:isScrollContainer="true"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".ProfileActivity">
-
-    <ImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:contentDescription="@string/profile_photo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/txtNameProfile"
-        style="@style/ProfileName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        tools:text="Jose Mateo" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:padding="18dp"
+        tools:context=".ProfileActivity">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:contentDescription="@string/profile_photo"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtNameProfile"
+            style="@style/ProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            tools:text="Jose Mateo" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginTop="16dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
-            <TextView
-                style="@style/attNameText"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/birth_date" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                style="@style/attNameText"
-                android:layout_width="match_parent"
+                <TextView
+                    style="@style/attNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birth_date" />
+
+                <TextView
+                    style="@style/attNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/city" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/city" />
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtBirthDate"
+                    style="@style/attValueText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="19 julio 1996" />
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    style="@style/attValueText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Madrid" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtBirthDate"
-                style="@style/attValueText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="19 julio 1996" />
-
-            <TextView
-                android:id="@+id/txtCity"
-                style="@style/attValueText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                tools:text="Madrid" />
-        </LinearLayout>
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            tools:text="lorem Ipsum" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        tools:text="lorem Ipsum" />
-</LinearLayout>
 </ScrollView>
