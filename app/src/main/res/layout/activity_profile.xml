@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:isScrollContainer="true"
     android:orientation="vertical"
@@ -49,6 +52,7 @@
                 style="@style/attNameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="@string/city" />
         </LinearLayout>
 
@@ -70,6 +74,7 @@
                 style="@style/attValueText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 tools:text="Madrid" />
         </LinearLayout>
     </LinearLayout>
@@ -78,5 +83,7 @@
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         tools:text="lorem Ipsum" />
 </LinearLayout>
+</ScrollView>

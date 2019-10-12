@@ -16,17 +16,28 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        //Initialization of UI components
         imgProfile = findViewById(R.id.imgProfile)
         txtNameProfile = findViewById(R.id.txtNameProfile)
         txtBirthDate = findViewById(R.id.txtBirthDate)
         txtCity = findViewById(R.id.txtCity)
         txtDescription = findViewById(R.id.txtDescription)
 
-        val image = intent.extras?.get("image")
-        val name = intent.extras?.get("name")
-        val birthDate = intent.extras?.get("birth_date")
-        val city = intent.extras?.get("city")
-        val description = intent.extras?.get("description")
+        //Getting the intent values
+        val image = intent.extras?.getInt("image")
+        val name = intent.extras?.getString("name")
+        val birthDate = intent.extras?.getString("birth_date")
+        val city = intent.extras?.getString("city")
+        val description = intent.extras?.getString("description")
+
+        //Setting the component with the intent values
+
+        imgProfile.setImageResource(image!!)
+        txtNameProfile.text = name!!
+        txtBirthDate.text = birthDate!!
+        txtCity.text = city!!
+        txtDescription.text = description!!
+
 
 
     }
