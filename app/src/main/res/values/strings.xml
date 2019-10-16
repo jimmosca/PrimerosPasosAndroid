@@ -11,4 +11,7 @@
     <string name="genre">Genre:</string>
     <string name="film_photo">Film photo</string>
     <string name="go_to_film_detail">Go to film detail</string>
+    <string name="shareimage" translatable="false">ShareImage</string>
+    <string name="newimage" translatable="false">NewImage</string>
+    <string name="favimage" translatable="false">FavImage</string>
 </resources>
