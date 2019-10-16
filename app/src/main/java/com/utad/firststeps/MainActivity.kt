@@ -3,6 +3,7 @@ package com.utad.firststeps
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnIncrease: Button
     private lateinit var btnProfile: Button
     private lateinit var btnFilmDetail: Button
+    private var count = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         btnProfile = findViewById(R.id.btnProfile)
         btnFilmDetail = findViewById(R.id.btnFilmDetail)
 
-        var count = 1
 
         btnIncrease.setOnClickListener {
            changeText(count++)
@@ -46,4 +47,41 @@ class MainActivity : AppCompatActivity() {
         val message: String = getString(R.string.base_text, timesPressed, timesPressed)
         txtCount.text = message
     }
+    override fun onStart() {
+        super.onStart()
+        Log.e("MainActivity", "OnStart Method")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("MainActivity", "OnResume method")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("MainActivity", "OnPause method")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("MainActivity", "OnStop method")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("MainActivity", "OnDestroy method")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("Count", count)
+        outState.putCharSequence("Message", txtCount.text)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        count = savedInstanceState.getInt("Count")
+        txtCount.text = savedInstanceState.getCharSequence("Message")
+    }
+
 }

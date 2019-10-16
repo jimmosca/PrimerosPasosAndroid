@@ -2,6 +2,8 @@ package com.utad.firststeps
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.squareup.picasso.Picasso
 import com.utad.firststeps.model.Movie
 import kotlinx.android.synthetic.main.activity_films.*
 
@@ -26,6 +28,32 @@ class FilmsActivity : AppCompatActivity() {
             txtGenreValue.text = genre
             txtProductionYearValue.text = year
             txtDescription.text = description
+            Picasso.get().load("https://miro.medium.com/max/3838/1*kn8bIlpAIYbPQKqqnnpPeg.png").into(imgMovie)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("FilmDetailActivity", "OnStart Method")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("FilmDetailActivity", "OnResume method")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("FilmDetailActivity", "OnPause method")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("FilmDetailActivity", "OnStop method")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("FilmDetailActivity", "OnDestroy method")
     }
 }

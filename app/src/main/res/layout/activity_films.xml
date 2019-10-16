@@ -10,7 +10,7 @@
     tools:context=".FilmsActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgMovie"
         android:layout_width="0dp"
         android:layout_height="227dp"
         android:contentDescription="@string/film_photo"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toStartOf="@+id/txtScore"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imgMovie"
         tools:text="Pulp Fiction" />
 
     <TextView
