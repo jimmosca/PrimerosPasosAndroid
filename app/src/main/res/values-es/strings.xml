@@ -9,4 +9,5 @@
     <string name="production_year">Año de producción:</string>
     <string name="genre">Genero:</string>
     <string name="film_photo">Foto de película</string>
+    <string name="go_to_film_detail">Ir al detalle de película</string>
 </resources>

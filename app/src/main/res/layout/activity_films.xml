@@ -21,89 +21,89 @@
         app:srcCompat="@drawable/pepe" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTitle"
         style="@style/ProfileName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/score"
+        app:layout_constraintEnd_toStartOf="@+id/txtScore"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:text="Pulp Fiction" />
 
     <TextView
-        android:id="@+id/genre_title"
+        android:id="@+id/txtGenreTitle"
         style="@style/attNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/genre"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
     <TextView
-        android:id="@+id/production_year_title"
+        android:id="@+id/txtProductionYearTitle"
         style="@style/attNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/production_year"
-        app:layout_constraintStart_toStartOf="@+id/genre_title"
-        app:layout_constraintTop_toBottomOf="@+id/genre_title" />
+        app:layout_constraintStart_toStartOf="@+id/txtGenreTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtGenreTitle" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="right"
-        app:constraint_referenced_ids="genre_title,production_year_title"
+        app:constraint_referenced_ids="txtGenreTitle,txtProductionYearTitle"
         tools:layout_editor_absoluteX="411dp" />
 
     <TextView
-        android:id="@+id/genre_value"
+        android:id="@+id/txtGenreValue"
         style="@style/attValueText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/genre_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtGenreTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/barrier"
         tools:text="Thriller" />
 
     <TextView
-        android:id="@+id/production_year_value"
+        android:id="@+id/txtProductionYearValue"
         style="@style/attValueText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/production_year_title"
-        app:layout_constraintEnd_toEndOf="@+id/genre_value"
-        app:layout_constraintStart_toStartOf="@+id/genre_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtProductionYearTitle"
+        app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
+        app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
         tools:text="1996" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txtDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/production_year_value"
-        app:layout_constraintStart_toStartOf="@+id/production_year_title"
-        app:layout_constraintTop_toBottomOf="@+id/production_year_title"
+        app:layout_constraintEnd_toEndOf="@+id/txtProductionYearValue"
+        app:layout_constraintStart_toStartOf="@+id/txtProductionYearTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtProductionYearTitle"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/lorem_ipsum" />
+        tools:text="Lorem ipsum dolor sit amet consectetur adipiscing elit torquent aliquam nam augue varius libero, interdum pellentesque viverra inceptos congue conubia sollicitudin in gravida ridiculus curae. Primis aliquam porttitor quam dapibus magnis habitant nostra condimentum laoreet, maecenas praesent per non posuere himenaeos auctor parturient vel tempus, class inceptos platea augue feugiat convallis sodales ullamcorper. Inceptos volutpat lectus proin integer posuere egestas interdum, libero nec penatibus habitasse magna molestie cubilia feugiat, fringilla aliquet etiam mollis tortor senectus." />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/txtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/txtTitle"
         tools:text="8.9" />
 
     <ImageView
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
     <ImageView

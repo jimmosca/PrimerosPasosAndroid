@@ -9,6 +9,6 @@
     <string name="go_to_profile">Go to profile</string>
     <string name="production_year">Production year:</string>
     <string name="genre">Genre:</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet consectetur adipiscing elit torquent aliquam nam augue varius libero, interdum pellentesque viverra inceptos congue conubia sollicitudin in gravida ridiculus curae. Primis aliquam porttitor quam dapibus magnis habitant nostra condimentum laoreet, maecenas praesent per non posuere himenaeos auctor parturient vel tempus, class inceptos platea augue feugiat convallis sodales ullamcorper. Inceptos volutpat lectus proin integer posuere egestas interdum, libero nec penatibus habitasse magna molestie cubilia feugiat, fringilla aliquet etiam mollis tortor senectus.</string>
     <string name="film_photo">Film photo</string>
+    <string name="go_to_film_detail">Go to film detail</string>
 </resources>
