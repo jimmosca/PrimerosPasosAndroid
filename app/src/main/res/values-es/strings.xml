@@ -6,4 +6,7 @@
     <string name="city">Ciudad</string>
     <string name="profile_photo">Foto de perfil</string>
     <string name="go_to_profile">Ir al perfil</string>
+    <string name="production_year">Año de producción:</string>
+    <string name="genre">Genero:</string>
+    <string name="film_photo">Foto de película</string>
 </resources>
