@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">FirstSteps_CasadoJaime</string>
+    <string name="app_name" translatable="false">FirstSteps_CasadoJaime</string>
+    <string name="increment_button">Increment value</string>
+    <string name="hello_kotlin">Hello Kotlin!!!</string>
+    <string name="base_text">Number of times you pressed the button: %1$d  %2$d</string>
+    <string name="birth_date">Birth date</string>
+    <string name="city">City</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="go_to_profile">Go to profile</string>
 </resources>

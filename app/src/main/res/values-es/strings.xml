@@ -1,0 +1,9 @@
+<resources>
+    <string name="increment_button">Incrementar valor</string>
+    <string name="hello_kotlin">Hola Kotlin!!!</string>
+    <string name="base_text">Numero de veces que has pulsado el boton: %1$d  %2$d</string>
+    <string name="birth_date">Fecha nacimiento</string>
+    <string name="city">Ciudad</string>
+    <string name="profile_photo">Foto de perfil</string>
+    <string name="go_to_profile">Ir al perfil</string>
+</resources>

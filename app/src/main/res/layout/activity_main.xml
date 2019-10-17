@@ -13,12 +13,21 @@
         android:id="@+id/txtCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/hello_kotlin"
         />
     <Button
         android:id="@+id/btnIncrease"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:text="@string/increment_button"
+        />
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/go_to_profile"
         />
 
 </LinearLayout>
