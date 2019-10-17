@@ -1,3 +1,16 @@
 package com.utad.firststeps.model
 
-data class Movie(val id: Int, val title: String, val genre: String,val year: String, val description: String, val score: Int)
+data class Movie(val popularity: Double,
+                 val voteCount: Int,
+                 val video: Boolean,
+                 val posterPath: String,
+                 val id: Int,
+                 val adult: Boolean,
+                 val backdropPath: String,
+                 val originalLanguage: String,
+                 val originalTitle: String,
+                 val genreIds: List<Int>,
+                 val title: String,
+                 val voteAverage: Double,
+                 val overview: String,
+                 val releaseDate: String)
