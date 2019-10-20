@@ -1,4 +1,4 @@
-package com.utad.firststeps
+package com.utad.firststeps.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.utad.firststeps.R
 import com.utad.firststeps.model.Movie
 
 class MainActivity : AppCompatActivity() {
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnFilmDetail.setOnClickListener {
-            val intent = Intent(this, FilmsActivity::class.java)
+            val intent = Intent(this, FilmDetailActivity::class.java)
             startActivity(intent)
         }
     }

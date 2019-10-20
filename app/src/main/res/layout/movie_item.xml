@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgMoviePoster"
+        android:layout_width="66.67dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/sorry_to_bother_you"
+        android:contentDescription="@string/movie_poster" />
+
+    <TextView
+        android:id="@+id/txtMovieTitle"
+        style="@style/movie_item_bold_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtMovieOriginalTitle"
+        app:layout_constraintEnd_toStartOf="@+id/txtMovieReleaseDateValue"
+        app:layout_constraintStart_toEndOf="@+id/imgMoviePoster"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sorry to bother you" />
+
+    <TextView
+        android:id="@+id/txtMovieScore"
+        style="@style/movie_item_bold_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtMovieTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="6.9" />
+
+    <TextView
+        android:id="@+id/txtMovieOriginalTitle"
+        style="@style/movie_item_normal_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtMovieReleaseDateField"
+        app:layout_constraintEnd_toEndOf="@+id/txtMovieTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtMovieTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtMovieTitle"
+        tools:text="Sorry to bother you" />
+
+    <TextView
+        android:id="@+id/txtMovieReleaseDateField"
+        style="@style/movie_item_normal_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/release_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtMovieOriginalTitle"
+        app:layout_constraintStart_toStartOf="@+id/txtMovieOriginalTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtMovieOriginalTitle" />
+
+    <TextView
+        android:id="@+id/txtMovieReleaseDateValue"
+        style="@style/movie_item_normal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtMovieReleaseDateField"
+        app:layout_constraintEnd_toEndOf="@+id/txtMovieScore"
+        tools:text="08-07-2018" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierMovieItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="txtMovieReleaseDateValue,txtMovieScore"
+        tools:layout_editor_absoluteX="411dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
