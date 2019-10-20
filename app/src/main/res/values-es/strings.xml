@@ -9,6 +9,6 @@
     <string name="production_year">Año de producción:</string>
     <string name="genre">Genero:</string>
     <string name="film_photo">Foto de película</string>
-    <string name="go_to_film_detail">Ir al detalle de película</string>
+    <string name="go_to_film_list">Ir a lista de películas</string>
     <string name="release_date">Fecha de lanzamiento:</string>
 </resources>

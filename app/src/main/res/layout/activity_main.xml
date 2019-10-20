@@ -31,10 +31,10 @@
         />
 
     <Button
-        android:id="@+id/btnFilmDetail"
+        android:id="@+id/btnFilmsList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/go_to_film_detail" />
+        android:text="@string/go_to_film_list" />
 
 </LinearLayout>

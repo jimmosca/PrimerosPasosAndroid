@@ -36,5 +36,5 @@ class MovieViewHolder(view: androidx.constraintlayout.widget.ConstraintLayout): 
     val title: TextView = view.findViewById(R.id.txtMovieTitle)
     val originalTitle: TextView = view.findViewById(R.id.txtMovieOriginalTitle)
     val score: TextView = view.findViewById(R.id.txtMovieScore)
-    val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateField)
+    val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
 }
