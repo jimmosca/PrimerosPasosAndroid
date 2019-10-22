@@ -1,13 +1,11 @@
-package com.utad.firststeps
+package com.utad.firststeps.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.squareup.picasso.Picasso
-import com.utad.firststeps.model.Movie
-import kotlinx.android.synthetic.main.activity_films.*
+import com.utad.firststeps.R
 
-class FilmsActivity : AppCompatActivity() {
+class FilmDetailActivity : AppCompatActivity() {
 
     /*private val movie = Movie(
         id = 1,
@@ -20,7 +18,7 @@ class FilmsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_films)
+        setContentView(R.layout.activity_film_detail)
 
         /*with(movie){
             txtTitle.text = title

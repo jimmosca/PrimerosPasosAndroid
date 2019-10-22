@@ -1,9 +1,10 @@
-package com.utad.firststeps
+package com.utad.firststeps.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.utad.firststeps.R
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var imgProfile: ImageView
