@@ -1,24 +1,30 @@
-package com.utad.firststeps
+package com.utad.firststeps.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.*
+import com.utad.firststeps.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var txtCount: TextView
     private lateinit var btnIncrease: Button
-    private lateinit var brnProfile: Button
+    private lateinit var btnProfile: Button
+    private lateinit var btnFilmsList: Button
+    private var count = 1
+
+    //API Token
+    private val apiToken = "e618da2f60ee21d4245452db11f9040e"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnIncrease = findViewById(R.id.btnIncrease)
         txtCount = findViewById(R.id.txtCount)
-        brnProfile = findViewById(R.id.btnProfile)
+        btnProfile = findViewById(R.id.btnProfile)
+        btnFilmsList = findViewById(R.id.btnFilmsList)
 
-        var count = 1
 
         btnIncrease.setOnClickListener {
            changeText(count++)
@@ -35,9 +41,51 @@ class MainActivity : AppCompatActivity() {
                     "Vestibulum conubia inceptos nec sollicitudin nostra curabitur ut morbi quis habitant proin, erat mauris hendrerit curae dapibus facilisi potenti vitae natoque. Bibendum magna varius per maecenas elementum quam suscipit, nulla ac nisl quis nam iaculis, fusce accumsan inceptos lectus vulputate ridiculus. Luctus quisque praesent proin purus aliquet nibh, inceptos litora arcu fusce est feugiat venenatis, magna id vivamus mus nulla.")
             startActivity(intent)
         }
+
+        btnFilmsList.setOnClickListener {
+            val intent = Intent(this, FilmsListActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun changeText(timesPressed: Int) {
         val message: String = getString(R.string.base_text, timesPressed, timesPressed)
         txtCount.text = message
     }
+    override fun onStart() {
+        super.onStart()
+        Log.e("MainActivity", "OnStart Method")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("MainActivity", "OnResume method")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("MainActivity", "OnPause method")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("MainActivity", "OnStop method")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("MainActivity", "OnDestroy method")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("Count", count)
+        outState.putCharSequence("Message", txtCount.text)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        count = savedInstanceState.getInt("Count")
+        txtCount.text = savedInstanceState.getCharSequence("Message")
+    }
+
 }

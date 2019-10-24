@@ -7,4 +7,13 @@
     <string name="city">City</string>
     <string name="profile_photo">Profile Photo</string>
     <string name="go_to_profile">Go to profile</string>
+    <string name="production_year">Production year:</string>
+    <string name="genre">Genre:</string>
+    <string name="film_photo">Film photo</string>
+    <string name="go_to_film_list">Go to films list</string>
+    <string name="shareimage" translatable="false">ShareImage</string>
+    <string name="newimage" translatable="false">NewImage</string>
+    <string name="favimage" translatable="false">FavImage</string>
+    <string name="release_date">Release date:</string>
+    <string name="movie_poster" translatable="false">movie _poster</string>
 </resources>
