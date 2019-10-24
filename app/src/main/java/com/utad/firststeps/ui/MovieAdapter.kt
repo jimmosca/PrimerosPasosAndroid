@@ -1,5 +1,6 @@
 package com.utad.firststeps.ui
 
+import android.view.LayoutInflater
 import android.view.LayoutInflater.*
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -14,27 +15,38 @@ class MovieAdapter(private val movieList: List<Movie>) : RecyclerView.Adapter<Mo
     override fun getItemCount() = movieList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val movieItem = from(parent.context).inflate(R.layout.movie_item, parent, false) as androidx.constraintlayout.widget.ConstraintLayout
 
-        return MovieViewHolder(movieItem)
+
+        return MovieViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val currentMovie = movieList[position]
 
-        Picasso.get().load(currentMovie.posterPath).into(holder.image)
-        holder.title.text = currentMovie.title
-        holder.originalTitle.text = currentMovie.originalTitle
-        holder.score.text = currentMovie.voteAverage.toString()
-        holder.releaseDate.text = currentMovie.releaseDate
+        holder.bind(currentMovie)
 
     }
 }
 
 class MovieViewHolder(view: androidx.constraintlayout.widget.ConstraintLayout): RecyclerView.ViewHolder(view){
-    val image: ImageView = view.findViewById(R.id.imgMoviePoster)
-    val title: TextView = view.findViewById(R.id.txtMovieTitle)
-    val originalTitle: TextView = view.findViewById(R.id.txtMovieOriginalTitle)
-    val score: TextView = view.findViewById(R.id.txtMovieScore)
-    val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
+    private val image: ImageView = view.findViewById(R.id.imgMoviePoster)
+    private val title: TextView = view.findViewById(R.id.txtMovieTitle)
+    private val originalTitle: TextView = view.findViewById(R.id.txtMovieOriginalTitle)
+    private val score: TextView = view.findViewById(R.id.txtMovieScore)
+    private val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
+
+    fun bind(movie: Movie) {
+        Picasso.get().load(movie.posterPath).into(image)
+        title.text = movie.title
+        originalTitle.text = movie.originalTitle
+        score.text = movie.voteAverage.toString()
+        releaseDate.text = movie.releaseDate
+    }
+    companion object{
+        fun from(parent: ViewGroup): MovieViewHolder{
+            val movieItem = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false) as androidx.constraintlayout.widget.ConstraintLayout
+            return MovieViewHolder(movieItem)
+        }
+    }
+
 }
