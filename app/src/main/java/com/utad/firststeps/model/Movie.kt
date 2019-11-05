@@ -1,16 +1,39 @@
 package com.utad.firststeps.model
 
-data class Movie(val popularity: Double,
-                 val voteCount: Int,
-                 val video: Boolean,
-                 val posterPath: String,
-                 val id: Int,
-                 val adult: Boolean,
-                 val backdropPath: String,
-                 val originalLanguage: String,
-                 val originalTitle: String,
-                 val genreIds: List<Int>,
-                 val title: String,
-                 val voteAverage: Double,
-                 val overview: String,
-                 val releaseDate: String)
+//Search Fragment
+data class Movie(
+    val poster_path: String,
+    val id: Int,
+    val original_title: String,
+    val title: String,
+    val vote_average: Double,
+    val release_date: String
+)
+
+data class SearchResult(val results: List<Movie>)
+
+//MovieDetailActivity
+data class MovieDetail(
+    val backdrop_path: String,
+    val title: String,
+    val vote_average: Double,
+    val release_date: String,
+    val genres: List<MovieGenre>,
+    val overview: String
+) {
+    val reducedGenres = genres.subList(0, 2)
+}
+
+data class MovieGenre(val name: String)
+
+data class MovieCredit(
+    val cast: List<MovieActor>,
+    val crew: List<MovieDirector>
+) {
+    val actors = cast.subList(0, 3)
+    val directors = crew.mapNotNull { if (it.job.equals("Director")) it else null }.subList(0, 2)
+}
+
+data class MovieActor(val name: String)
+
+data class MovieDirector(val name: String, val job: String)

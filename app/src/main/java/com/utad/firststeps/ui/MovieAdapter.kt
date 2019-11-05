@@ -1,7 +1,6 @@
 package com.utad.firststeps.ui
 
 import android.view.LayoutInflater
-import android.view.LayoutInflater.*
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -36,11 +35,11 @@ class MovieViewHolder(view: androidx.constraintlayout.widget.ConstraintLayout): 
     private val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
 
     fun bind(movie: Movie) {
-        Picasso.get().load(movie.posterPath).into(image)
+        Picasso.get().load(movie.poster_path).into(image)
         title.text = movie.title
-        originalTitle.text = movie.originalTitle
-        score.text = movie.voteAverage.toString()
-        releaseDate.text = movie.releaseDate
+        originalTitle.text = movie.original_title
+        score.text = movie.vote_average.toString()
+        releaseDate.text = movie.release_date
     }
     companion object{
         fun from(parent: ViewGroup): MovieViewHolder{
