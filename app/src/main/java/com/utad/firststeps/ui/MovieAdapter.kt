@@ -35,7 +35,7 @@ class MovieViewHolder(view: androidx.constraintlayout.widget.ConstraintLayout): 
     private val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
 
     fun bind(movie: Movie) {
-        Picasso.get().load(movie.poster_path).into(image)
+        //Picasso.get().load(movie.poster_path).into(image)
         title.text = movie.title
         originalTitle.text = movie.original_title
         score.text = movie.vote_average.toString()

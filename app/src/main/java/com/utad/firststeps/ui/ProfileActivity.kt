@@ -35,11 +35,11 @@ class ProfileActivity : AppCompatActivity() {
 
         //Setting the component with the intent values
 
-        imgProfile.setImageResource(image!!)
+       /* imgProfile.setImageResource(image!!)
         txtNameProfile.text = name!!
         txtBirthDate.text = birthDate!!
         txtCity.text = city!!
-        txtDescription.text = description!!
+        txtDescription.text = description!!*/
 
 
 

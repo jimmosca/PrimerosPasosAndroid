@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.FilmsListActivity"></activity>
+        <activity android:name=".ui.MovieSearchFragment"></activity>
         <activity android:name=".ui.FilmDetailActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
