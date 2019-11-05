@@ -11,4 +11,7 @@
     <string name="film_photo">Foto de película</string>
     <string name="go_to_film_list">Ir a lista de películas</string>
     <string name="release_date">Fecha de lanzamiento:</string>
+    <string name="favorites">Favoritos</string>
+    <string name="search">Buscar</string>
+    <string name="profile">Perfil</string>
 </resources>

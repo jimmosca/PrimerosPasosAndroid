@@ -16,4 +16,7 @@
     <string name="favimage" translatable="false">FavImage</string>
     <string name="release_date">Release date:</string>
     <string name="movie_poster" translatable="false">movie _poster</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
 </resources>
