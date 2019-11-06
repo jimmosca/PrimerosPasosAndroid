@@ -9,11 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.utad.firststeps.R
 import com.utad.firststeps.model.Movie
-import kotlinx.android.synthetic.main.fragment_search_movie.*;
 
 class MovieSearchFragment : Fragment() {
 
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,

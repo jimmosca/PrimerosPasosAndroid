@@ -19,4 +19,5 @@
     <string name="favorites">Favorites</string>
     <string name="search">Search</string>
     <string name="profile">Profile</string>
+    <string name="here_will_go_the_favorite_view">Here will go the Favorites View</string>
 </resources>

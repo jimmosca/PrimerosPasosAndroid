@@ -12,7 +12,7 @@
         android:isScrollContainer="true"
         android:orientation="vertical"
         android:padding="18dp"
-        tools:context=".ui.ProfileActivity">
+        tools:context=".ui.ProfileFragment">
 
         <ImageView
             android:id="@+id/imgProfile"
