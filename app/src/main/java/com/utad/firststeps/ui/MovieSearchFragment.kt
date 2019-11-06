@@ -22,7 +22,9 @@ class MovieSearchFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_search_movie, container, false)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        recyclerView.adapter = MovieAdapter(listOf(Movie(poster_path = "", id = 123, original_title = "Rambo", title = "Rambo", vote_average = 5.6, release_date = "12-04-1982")))
+        recyclerView.adapter = MovieAdapter{
+
+        }
 
         return view
     }
