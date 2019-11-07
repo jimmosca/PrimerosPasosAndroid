@@ -31,7 +31,7 @@ data class MovieCredit(
     val crew: List<MovieDirector>
 ) {
     val actors = cast.subList(0, 3)
-    val directors = crew.mapNotNull { if (it.job.equals("Director")) it else null }.subList(0, 2)
+    val directors = crew.filter { it.job.equals("Director")}.map { it.name }
 }
 
 data class MovieActor(val name: String)

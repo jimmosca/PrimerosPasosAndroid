@@ -1,4 +1,4 @@
-package com.utad.firststeps.ui
+package com.utad.firststeps.ui.movies.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

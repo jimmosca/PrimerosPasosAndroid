@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MovieSearchFragment"></activity>
-        <activity android:name=".ui.FilmDetailActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.movies.search.MovieSearchFragment"></activity>
+        <activity android:name=".ui.movies.detail.FilmDetailActivity" />
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ProfileFragment" />
+        <activity android:name=".ui.profile.ProfileFragment" />
     </application>
 
 </manifest>

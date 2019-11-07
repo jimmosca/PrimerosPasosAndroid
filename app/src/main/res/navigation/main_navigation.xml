@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/fragment_search_movie"
-        android:name="com.utad.firststeps.ui.MovieSearchFragment"
+        android:name="com.utad.firststeps.ui.movies.search.MovieSearchFragment"
         android:label="Search Movies"
         tools:layout="@layout/fragment_search_movie" />
     <fragment
         android:id="@+id/fragment_favorites"
-        android:name="com.utad.firststeps.ui.FavoritesFragment"
+        android:name="com.utad.firststeps.ui.movies.favorites.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.utad.firststeps.ui.ProfileFragment"
+        android:name="com.utad.firststeps.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

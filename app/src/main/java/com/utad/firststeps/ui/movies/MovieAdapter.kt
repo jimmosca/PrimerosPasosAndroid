@@ -1,4 +1,4 @@
-package com.utad.firststeps.ui
+package com.utad.firststeps.ui.movies
 
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +16,7 @@ class MovieAdapter(private val listener: (Movie) -> Unit) : RecyclerView.Adapter
 
     fun addMovies(movies: List<Movie>) {
         movieList = movies
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = movieList.size
@@ -43,7 +44,7 @@ class MovieViewHolder(view: View): RecyclerView.ViewHolder(view){
     private val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
 
     fun bind(movie: Movie, listener: (Movie) -> Unit) {
-        //Picasso.get().load(movie.poster_path).into(image)
+        Picasso.get().load(movie.poster_path).into(image)
         title.text = movie.title
         originalTitle.text = movie.original_title
         score.text = movie.vote_average.toString()
@@ -51,7 +52,7 @@ class MovieViewHolder(view: View): RecyclerView.ViewHolder(view){
         this.itemView.setOnClickListener { listener.invoke(movie) }
     }
     companion object{
-        fun from(parent: ViewGroup): MovieViewHolder{
+        fun from(parent: ViewGroup): MovieViewHolder {
             val movieItem = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
             return MovieViewHolder(movieItem)
         }

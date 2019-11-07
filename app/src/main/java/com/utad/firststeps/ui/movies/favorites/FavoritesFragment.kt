@@ -1,4 +1,4 @@
-package com.utad.firststeps.ui
+package com.utad.firststeps.ui.movies.favorites
 
 
 import android.os.Bundle

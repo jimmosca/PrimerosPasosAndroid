@@ -15,4 +15,5 @@
     <string name="search">Buscar</string>
     <string name="profile">Perfil</string>
     <string name="here_will_go_the_favorite_view">Aquí irá la Vista de Favoritos</string>
+    <string name="search_hint">Search Movie</string>
 </resources>
