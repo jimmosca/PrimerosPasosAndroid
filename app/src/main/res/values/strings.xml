@@ -7,7 +7,7 @@
     <string name="city">City</string>
     <string name="profile_photo">Profile Photo</string>
     <string name="go_to_profile">Go to profile</string>
-    <string name="production_year">Production year:</string>
+    <string name="production_year">Year:</string>
     <string name="genre">Genre:</string>
     <string name="film_photo">Film photo</string>
     <string name="go_to_film_list">Go to films list</string>
@@ -16,4 +16,13 @@
     <string name="favimage" translatable="false">FavImage</string>
     <string name="release_date">Release date:</string>
     <string name="movie_poster" translatable="false">movie _poster</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="here_will_go_the_favorite_view">Here will go the Favorites View</string>
+    <string name="search_hint">Search Movie</string>
+    <string name="no_results">No results</string>
+    <string name="director" translatable="false">Director:</string>
+    <string name="movie_detail">Movie Detail</string>
+    <string name="cast">Cast:</string>
 </resources>
