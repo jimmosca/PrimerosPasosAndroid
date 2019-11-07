@@ -1,5 +1,6 @@
 package com.utad.firststeps.ui.movies
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.utad.firststeps.R
 import com.utad.firststeps.model.Movie
+import com.utad.firststeps.model.posterBaseUrl
 
 class MovieAdapter(private val listener: (Movie) -> Unit) : RecyclerView.Adapter<MovieViewHolder>(){
 
@@ -44,7 +46,7 @@ class MovieViewHolder(view: View): RecyclerView.ViewHolder(view){
     private val releaseDate: TextView = view.findViewById(R.id.txtMovieReleaseDateValue)
 
     fun bind(movie: Movie, listener: (Movie) -> Unit) {
-        Picasso.get().load(movie.poster_path).into(image)
+        Picasso.get().load(posterBaseUrl + movie.poster_path).into(image)
         title.text = movie.title
         originalTitle.text = movie.original_title
         score.text = movie.vote_average.toString()

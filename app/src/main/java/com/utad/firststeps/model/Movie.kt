@@ -1,5 +1,6 @@
 package com.utad.firststeps.model
-
+const val posterBaseUrl = "http://image.tmdb.org/t/p/w342"
+const val backdrpBaseUrl = "http://image.tmdb.org/t/p/w780"
 //Search Fragment
 data class Movie(
     val poster_path: String,
@@ -20,19 +21,14 @@ data class MovieDetail(
     val release_date: String,
     val genres: List<MovieGenre>,
     val overview: String
-) {
-    val reducedGenres = genres.subList(0, 2)
-}
+)
 
 data class MovieGenre(val name: String)
 
 data class MovieCredit(
     val cast: List<MovieActor>,
     val crew: List<MovieDirector>
-) {
-    val actors = cast.subList(0, 3)
-    val directors = crew.filter { it.job.equals("Director")}.map { it.name }
-}
+)
 
 data class MovieActor(val name: String)
 

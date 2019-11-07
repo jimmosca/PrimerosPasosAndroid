@@ -6,7 +6,7 @@
     <string name="city">Ciudad</string>
     <string name="profile_photo">Foto de perfil</string>
     <string name="go_to_profile">Ir al perfil</string>
-    <string name="production_year">Año de producción:</string>
+    <string name="production_year">Año:</string>
     <string name="genre">Genero:</string>
     <string name="film_photo">Foto de película</string>
     <string name="go_to_film_list">Ir a lista de películas</string>
@@ -15,5 +15,8 @@
     <string name="search">Buscar</string>
     <string name="profile">Perfil</string>
     <string name="here_will_go_the_favorite_view">Aquí irá la Vista de Favoritos</string>
-    <string name="search_hint">Search Movie</string>
+    <string name="search_hint">Buscar Película</string>
+    <string name="no_results">Sin resultados</string>
+    <string name="movie_detail">Detalle de Película</string>
+    <string name="cast">Elenco:</string>
 </resources>

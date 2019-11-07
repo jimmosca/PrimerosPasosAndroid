@@ -11,7 +11,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
-val apiKey = "e618da2f60ee21d4245452db11f9040e"
+const val apiKey = "e618da2f60ee21d4245452db11f9040e"
 
 interface MoviesApi {
     @GET("search/movie")
@@ -25,7 +25,7 @@ interface MoviesApi {
 }
 
 object RetrofitFactory {
-    const val BASE_URL = "https://api.themoviedb.org/3/"
+    private const val BASE_URL = "https://api.themoviedb.org/3/"
 
     fun makeRetrofitService(): MoviesApi {
         return Retrofit.Builder()

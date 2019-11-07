@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/fragment_search_movie"
         android:name="com.utad.firststeps.ui.movies.search.MovieSearchFragment"
-        android:label="Search Movies"
+        android:label="@string/search"
         tools:layout="@layout/fragment_search_movie" />
     <fragment
         android:id="@+id/fragment_favorites"
         android:name="com.utad.firststeps.ui.movies.favorites.FavoritesFragment"
-        android:label="Favorites"
+        android:label="@string/favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/fragment_profile"
         android:name="com.utad.firststeps.ui.profile.ProfileFragment"
-        android:label="Profile"
+        android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
