@@ -1,7 +1,7 @@
 package com.utad.firststeps.ui.movies.search
 
-import com.utad.firststeps.data.RetrofitFactory
-import com.utad.firststeps.data.apiKey
+import com.utad.firststeps.data.remote.RetrofitFactory
+import com.utad.firststeps.data.remote.apiKey
 import com.utad.firststeps.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

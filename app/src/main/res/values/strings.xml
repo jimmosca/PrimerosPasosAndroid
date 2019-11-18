@@ -25,4 +25,8 @@
     <string name="director" translatable="false">Director:</string>
     <string name="movie_detail">Movie Detail</string>
     <string name="cast">Cast:</string>
+    <string name="order_by">Order by</string>
+    <string name="title">Title</string>
+    <string name="date_of_entry">Date of entry</string>
+    <string name="delete_favorites">Delete favorites</string>
 </resources>
