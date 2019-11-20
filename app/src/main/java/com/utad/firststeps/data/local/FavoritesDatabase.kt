@@ -18,6 +18,9 @@ interface MovieDao {
     @Query("SELECT * FROM movie ORDER BY dateCreated")
     suspend fun getByDate(): List<Movie>
 
+    @Query("SELECT count(title) FROM movie WHERE id =:id")
+    suspend fun isContained(id: Int): Int
+
 }
 
 @Database(entities = arrayOf(Movie::class), version = 2, exportSchema = false)

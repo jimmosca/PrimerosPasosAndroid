@@ -3,7 +3,7 @@ package com.utad.firststeps.ui.movies.favorites
 import com.utad.firststeps.data.local.LocalRepository
 import com.utad.firststeps.model.Movie
 
-class FavoritesPresenter(val view: FavoritesView, val localRepository: LocalRepository) {
+class FavoritesPresenter(private val view: FavoritesView, private val localRepository: LocalRepository) {
     fun init(){
         view.listPassed(localRepository.getAll())
     }
