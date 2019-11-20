@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import com.utad.firststeps.R
 import com.utad.firststeps.data.local.DatabaseFactory
@@ -51,6 +52,10 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
         presenter.init(id)
 
+        btnFavorite.setOnClickListener {
+            presenter.onFavoriteClicked()
+        }
+
     }
 
     override fun showMovieDetails(movieDetail: MovieDetail) {
@@ -65,5 +70,17 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         txtDirectorValue.text =
             movieCast.crew.filter { it.job.equals("Director") }.joinToString(", ") { it.name }
         txtCastValue.text = movieCast.cast.joinToString(", ") { it.name }
+    }
+
+    override fun showError() {
+        Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showAsFavorite() {
+        btnFavorite.setImageResource(R.drawable.filled_star)
+    }
+
+    override fun showAsNoFavorite() {
+        btnFavorite.setImageResource(R.drawable.empty_star)
     }
 }

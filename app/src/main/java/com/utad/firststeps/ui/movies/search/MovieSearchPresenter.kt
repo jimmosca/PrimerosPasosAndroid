@@ -15,15 +15,21 @@ class MovieSearchPresenter(
 ) {
 
     fun getMovies(query: String) {
-        if (!query.isEmpty()) {
-            view.showMovieList(
-                remoteRepository.getMovies(
+        if (query.isNotEmpty()) {
+            CoroutineScope(Dispatchers.IO).launch {
+                val movies = remoteRepository.getMovies(
                     mapOf(
                         "api_key" to apiKey,
                         "query" to query
                     )
                 )
-            )
+                withContext(Dispatchers.Main) {
+                    if (movies!!.isNotEmpty())
+                        view.showMovieList(movies)
+                    else
+                        view.showNoResults()
+                }
+            }
         }
     }
 

@@ -21,6 +21,12 @@ interface MovieDao {
     @Query("SELECT count(title) FROM movie WHERE id =:id")
     suspend fun isContained(id: Int): Int
 
+    @Query("DELETE FROM movie")
+    suspend fun deleteAll()
+
+    @Query("DELETE FROM movie WHERE id = :id")
+    suspend fun deleteOne(id: Int)
+
 }
 
 @Database(entities = arrayOf(Movie::class), version = 2, exportSchema = false)

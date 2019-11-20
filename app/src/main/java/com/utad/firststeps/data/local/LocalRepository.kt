@@ -3,6 +3,8 @@ package com.utad.firststeps.data.local
 import com.utad.firststeps.model.Movie
 
 interface LocalRepository{
-    fun getAll(): List<Movie>
-    fun addMovie(movie: Movie)
+    suspend fun getAll(): List<Movie>
+    suspend fun addMovie(movie: Movie)
+    suspend fun isContained(id: Int): Int
+    suspend fun deleteOne(id: Int)
 }

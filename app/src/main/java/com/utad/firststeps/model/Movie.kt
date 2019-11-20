@@ -22,6 +22,8 @@ data class SearchResult(val results: List<Movie>)
 
 //MovieDetailActivity
 data class MovieDetail(
+    val original_title: String,
+    val poster_path: String,
     val backdrop_path: String,
     val title: String,
     val vote_average: Double,

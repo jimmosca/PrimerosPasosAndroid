@@ -7,19 +7,20 @@ import kotlinx.coroutines.launch
 
 class RoomLocalRepository(val database: AppDatabase): LocalRepository{
 
-    val dao = database.movieDao()
-    override fun addMovie(movie: Movie) {
-        CoroutineScope(Dispatchers.IO).launch {
-            dao.addMovie(movie)
-        }
+    private val dao = database.movieDao()
+    override suspend fun addMovie(movie: Movie) {
+       dao.addMovie(movie)
     }
 
-    override fun getAll(): List<Movie> {
-        var movieList: List<Movie> = listOf()
-        CoroutineScope(Dispatchers.IO).launch {
+    override suspend fun isContained(id: Int): Int {
+        return dao.isContained(id)
+    }
 
-            movieList = dao.getAll()
-        }
-        return movieList
+    override suspend fun getAll(): List<Movie> {
+
+        return dao.getAll()
+    }
+    override suspend fun deleteOne(id: Int){
+        dao.deleteOne(id)
     }
 }
