@@ -26,14 +26,13 @@ class MovieDetailPresenter(
             val movieCast = remoteRepository.getMovieCast(id, apiKey)
             val existsOnDb = localRepository.isContained(id.toInt())
             withContext(Dispatchers.Main) {
-                if (movieDetail != null) {
+                if (movieDetail != null && movieCast != null) {
                     view.showMovieDetails(movieDetail)
-                } else
-                    view.showError()
-                if (movieCast != null) {
                     view.showMovieCast(movieCast)
+                    view.showDetailsContainer()
                 } else
                     view.showError()
+
                 if (existsOnDb == 1) {
                     view.showAsFavorite()
                     alreadyContained = true
@@ -44,18 +43,21 @@ class MovieDetailPresenter(
 
     fun onFavoriteClicked() {
         if (alreadyContained) {
+            view.setEnableBtnFavorite(false)
             view.showAsNoFavorite()
             CoroutineScope(Dispatchers.IO).launch {
                 localRepository.deleteOne(idMovie)
                 withContext(Dispatchers.Main) {
                     alreadyContained = false
+                    view.setEnableBtnFavorite(true)
                 }
             }
 
         } else {
+            view.setEnableBtnFavorite(false)
             view.showAsFavorite()
             CoroutineScope(Dispatchers.IO).launch {
-                var movieDetail = remoteRepository.getMovieDetail(idMovie.toString(), apiKey)
+                val movieDetail = remoteRepository.getMovieDetail(idMovie.toString(), apiKey)
                 if (movieDetail != null) {
                     localRepository.addMovie(
                         Movie(
@@ -69,14 +71,12 @@ class MovieDetailPresenter(
                     )
                     withContext(Dispatchers.Main) {
                         alreadyContained = true
+                        view.setEnableBtnFavorite(true)
                     }
                 }
             }
         }
-
     }
-
-
 }
 
 interface MovieDetailView {
@@ -85,4 +85,6 @@ interface MovieDetailView {
     fun showError()
     fun showAsFavorite()
     fun showAsNoFavorite()
+    fun setEnableBtnFavorite(enable: Boolean)
+    fun showDetailsContainer()
 }

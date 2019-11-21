@@ -4,9 +4,13 @@ import com.utad.firststeps.model.Movie
 import com.utad.firststeps.model.MovieCredit
 import com.utad.firststeps.model.MovieDetail
 
-class RetrofitRemoteRepository(val moviesApi: MoviesApi): RemoteRepository {
+class RetrofitRemoteRepository(private val moviesApi: MoviesApi): RemoteRepository {
     override suspend fun getMovies(map: Map<String, String>): List<Movie>? {
-        return moviesApi.getMovies(map).body()!!.results
+        val movieSearchResponse = moviesApi.getMovies(map)
+        return if (movieSearchResponse.isSuccessful)
+            movieSearchResponse.body()!!.results
+        else
+            null
     }
 
     override suspend fun getMovieDetail(id: String, api_key: String): MovieDetail? {

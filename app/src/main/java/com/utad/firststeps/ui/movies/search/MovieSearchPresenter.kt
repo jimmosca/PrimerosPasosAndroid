@@ -24,7 +24,7 @@ class MovieSearchPresenter(
                     )
                 )
                 withContext(Dispatchers.Main) {
-                    if (movies!!.isNotEmpty())
+                    if (movies!!.isNotEmpty() && movies != null)
                         view.showMovieList(movies)
                     else
                         view.showNoResults()

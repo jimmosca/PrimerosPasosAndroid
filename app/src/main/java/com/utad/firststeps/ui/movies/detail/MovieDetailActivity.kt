@@ -2,6 +2,7 @@ package com.utad.firststeps.ui.movies.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -12,32 +13,18 @@ import com.utad.firststeps.data.local.RoomLocalRepository
 import com.utad.firststeps.data.remote.RetrofitFactory
 import com.utad.firststeps.data.remote.RetrofitRemoteRepository
 import com.utad.firststeps.model.*
+import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
-    private lateinit var txtTitle: TextView
-    private lateinit var txtGenreValue: TextView
-    private lateinit var txtProductionYearValue: TextView
-    private lateinit var txtDirectorValue: TextView
-    private lateinit var txtCastValue: TextView
-    private lateinit var txtDescription: TextView
-    private lateinit var imgMovie: ImageView
-    private lateinit var btnFavorite: ImageView
+
     private lateinit var presenter: MovieDetailPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
 
-        txtTitle = findViewById(R.id.txtTitle)
-        txtGenreValue = findViewById(R.id.txtGenreValue)
-        txtProductionYearValue = findViewById(R.id.txtProductionYearValue)
-        txtDirectorValue = findViewById(R.id.txtDirectorValue)
-        txtCastValue = findViewById(R.id.txtCastValue)
-        txtDescription = findViewById(R.id.txtDescription)
-        imgMovie = findViewById(R.id.imgMovie)
 
-        btnFavorite = findViewById(R.id.btnFavorites)
 
         val actionBar = supportActionBar
         actionBar?.title = getString(R.string.movie_detail)
@@ -52,9 +39,10 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
         presenter.init(id)
 
-        btnFavorite.setOnClickListener {
+        btnFavorites.setOnClickListener {
             presenter.onFavoriteClicked()
         }
+
 
     }
 
@@ -73,14 +61,22 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     override fun showError() {
+        progressBar.visibility = View.GONE
         Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
     }
 
     override fun showAsFavorite() {
-        btnFavorite.setImageResource(R.drawable.filled_star)
+        btnFavorites.setImageResource(R.drawable.filled_star)
     }
 
     override fun showAsNoFavorite() {
-        btnFavorite.setImageResource(R.drawable.empty_star)
+        btnFavorites.setImageResource(R.drawable.empty_star)
+    }
+    override fun setEnableBtnFavorite(enable: Boolean) {
+        btnFavorites.isEnabled = enable
+    }
+    override fun showDetailsContainer() {
+        detailContainer.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
     }
 }

@@ -8,164 +8,191 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.movies.detail.MovieDetailActivity">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imgMovie"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:contentDescription="@string/film_photo"
-            android:scaleType="fitXY"
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="124dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pepe" />
+            tools:context=".ui.movies.detail.MovieDetailActivity">
 
-        <TextView
-            android:id="@+id/txtTitle"
-            style="@style/ProfileName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="@+id/txtGenreTitle"
-            app:layout_constraintTop_toBottomOf="@+id/imgMovie"
-            tools:text="Pulp Fiction" />
 
-        <TextView
-            android:id="@+id/txtGenreTitle"
-            style="@style/attNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/genre"
-            app:layout_constraintStart_toStartOf="@+id/txtProductionYearTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+            <ImageView
+                android:id="@+id/imgMovie"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:contentDescription="@string/film_photo"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pepe" />
 
-        <TextView
-            android:id="@+id/txtProductionYearTitle"
-            style="@style/attNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="@string/production_year"
-            app:layout_constraintStart_toStartOf="@+id/txtDirectorTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtGenreTitle" />
+            <TextView
+                android:id="@+id/txtTitle"
+                style="@style/ProfileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/txtGenreTitle"
+                app:layout_constraintTop_toBottomOf="@+id/imgMovie"
+                tools:text="Pulp Fiction" />
 
-        <TextView
-            android:id="@+id/txtDirectorTitle"
-            style="@style/attNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:text="@string/director"
-            app:layout_constraintStart_toStartOf="@+id/txtCastTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtProductionYearTitle" />
+            <TextView
+                android:id="@+id/txtGenreTitle"
+                style="@style/attNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/genre"
+                app:layout_constraintStart_toStartOf="@+id/txtProductionYearTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
-        <TextView
-            android:id="@+id/txtCastTitle"
-            style="@style/attNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="18dp"
-            android:text="@string/cast"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDirectorTitle" />
+            <TextView
+                android:id="@+id/txtProductionYearTitle"
+                style="@style/attNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/production_year"
+                app:layout_constraintStart_toStartOf="@+id/txtDirectorTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtGenreTitle" />
 
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="right"
-            app:constraint_referenced_ids="txtGenreTitle,txtProductionYearTitle,txtDirectorTitle"
-            tools:layout_editor_absoluteX="411dp" />
+            <TextView
+                android:id="@+id/txtDirectorTitle"
+                style="@style/attNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/director"
+                app:layout_constraintStart_toStartOf="@+id/txtCastTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductionYearTitle" />
 
-        <TextView
-            android:id="@+id/txtGenreValue"
-            style="@style/attValueText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtGenreTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/barrier"
-            tools:text="Thriller"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            <TextView
+                android:id="@+id/txtCastTitle"
+                style="@style/attNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/cast"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDirectorTitle" />
 
-        <TextView
-            android:id="@+id/txtProductionYearValue"
-            style="@style/attValueText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtProductionYearTitle"
-            app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
-            app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
-            tools:text="1996" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="right"
+                app:constraint_referenced_ids="txtGenreTitle,txtProductionYearTitle,txtDirectorTitle"
+                tools:layout_editor_absoluteX="411dp" />
 
-        <TextView
-            android:id="@+id/txtDirectorValue"
-            style="@style/attValueText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtDirectorTitle"
-            app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
-            tools:text="1996"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            <TextView
+                android:id="@+id/txtGenreValue"
+                style="@style/attValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txtGenreTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/barrier"
+                tools:text="Thriller" />
 
-        <TextView
-            android:id="@+id/txtCastValue"
-            style="@style/attValueText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtCastTitle"
-            app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
-            tools:text="1996"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            <TextView
+                android:id="@+id/txtProductionYearValue"
+                style="@style/attValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txtProductionYearTitle"
+                app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
+                app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
+                tools:text="1996" />
 
-        <TextView
-            android:id="@+id/txtDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/txtProductionYearValue"
-            app:layout_constraintStart_toStartOf="@+id/txtProductionYearTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtCastTitle"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Lorem ipsum dolor sit amet consectetur adipiscing elit torquent aliquam nam augue varius libero, interdum pellentesque viverra inceptos congue conubia sollicitudin in gravida ridiculus curae. Primis aliquam porttitor quam dapibus magnis habitant nostra condimentum laoreet, maecenas praesent per non posuere himenaeos auctor parturient vel tempus, class inceptos platea augue feugiat convallis sodales ullamcorper. Inceptos volutpat lectus proin integer posuere egestas interdum, libero nec penatibus habitasse magna molestie cubilia feugiat, fringilla aliquet etiam mollis tortor senectus." />
+            <TextView
+                android:id="@+id/txtDirectorValue"
+                style="@style/attValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txtDirectorTitle"
+                app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
+                tools:text="1996" />
 
-        <TextView
-            android:id="@+id/txtScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:textColor="#1D0101"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txtTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="8.9" />
+            <TextView
+                android:id="@+id/txtCastValue"
+                style="@style/attValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txtCastTitle"
+                app:layout_constraintEnd_toEndOf="@+id/txtGenreValue"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtGenreValue"
+                tools:text="1996" />
 
-        <ImageView
-            android:id="@+id/btnFavorites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:contentDescription="@string/favimage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescription"
-            app:srcCompat="@drawable/empty_star" />
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txtProductionYearValue"
+                app:layout_constraintStart_toStartOf="@+id/txtProductionYearTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtCastTitle"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Lorem ipsum dolor sit amet consectetur adipiscing elit torquent aliquam nam augue varius libero, interdum pellentesque viverra inceptos congue conubia sollicitudin in gravida ridiculus curae. Primis aliquam porttitor quam dapibus magnis habitant nostra condimentum laoreet, maecenas praesent per non posuere himenaeos auctor parturient vel tempus, class inceptos platea augue feugiat convallis sodales ullamcorper. Inceptos volutpat lectus proin integer posuere egestas interdum, libero nec penatibus habitasse magna molestie cubilia feugiat, fringilla aliquet etiam mollis tortor senectus." />
 
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:textColor="#1D0101"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txtTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="8.9" />
+
+            <ImageView
+                android:id="@+id/btnFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@string/favimage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+                app:srcCompat="@drawable/empty_star" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
