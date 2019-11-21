@@ -29,7 +29,7 @@ interface MovieDao {
 
 }
 
-@Database(entities = arrayOf(Movie::class), version = 2, exportSchema = false)
+@Database(entities = [Movie::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 }

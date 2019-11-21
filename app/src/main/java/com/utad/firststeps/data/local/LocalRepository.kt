@@ -7,4 +7,7 @@ interface LocalRepository{
     suspend fun addMovie(movie: Movie)
     suspend fun isContained(id: Int): Int
     suspend fun deleteOne(id: Int)
+    suspend fun getByName(): List<Movie>
+    suspend fun getByDate(): List<Movie>
+    suspend fun deleteAll()
 }

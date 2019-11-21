@@ -1,5 +1,6 @@
 package com.utad.firststeps.ui.movies.favorites
 
+import android.util.Log
 import com.utad.firststeps.data.local.LocalRepository
 import com.utad.firststeps.model.Movie
 import kotlinx.coroutines.CoroutineScope
@@ -16,8 +17,41 @@ class FavoritesPresenter(private val view: FavoritesView, private val localRepos
             }
         }
     }
+
+    fun onOrderByDateClicked() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val favorites = localRepository.getByDate()
+            withContext(Dispatchers.Main){
+                view.listPassed(favorites)
+            }
+        }
+    }
+
+    fun onOrderByNameClicked() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val favorites = localRepository.getByName()
+            withContext(Dispatchers.Main){
+                view.listPassed(favorites)
+            }
+        }
+    }
+
+    fun onDeleteClicked() {
+        view.showDeleteDialog()
+        Log.e("Presenter", "OnDeleteClicked")
+    }
+
+    fun delete(){
+        CoroutineScope(Dispatchers.IO).launch {
+            localRepository.deleteAll()
+            withContext(Dispatchers.Main){
+                view.listPassed(listOf())
+            }
+        }
+    }
 }
 interface FavoritesView {
     fun listPassed(movies: List<Movie>)
+    fun showDeleteDialog()
 
 }

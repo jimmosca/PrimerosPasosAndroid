@@ -47,6 +47,9 @@ class MovieDetailPresenter(
             view.showAsNoFavorite()
             CoroutineScope(Dispatchers.IO).launch {
                 localRepository.deleteOne(idMovie)
+                withContext(Dispatchers.Main) {
+                    alreadyContained = false
+                }
             }
 
         } else {
@@ -64,6 +67,9 @@ class MovieDetailPresenter(
                             release_date = movieDetail.release_date
                         )
                     )
+                    withContext(Dispatchers.Main) {
+                        alreadyContained = true
+                    }
                 }
             }
         }

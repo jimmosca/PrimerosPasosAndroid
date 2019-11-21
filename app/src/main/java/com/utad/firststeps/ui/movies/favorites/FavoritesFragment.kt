@@ -1,6 +1,8 @@
 package com.utad.firststeps.ui.movies.favorites
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -22,10 +24,10 @@ import com.utad.firststeps.ui.movies.detail.MovieDetailActivity
 
 class FavoritesFragment : Fragment(), FavoritesView {
 
-
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MovieAdapter
     lateinit var presenter: FavoritesPresenter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,11 +61,40 @@ class FavoritesFragment : Fragment(), FavoritesView {
         setHasOptionsMenu(true)
     }
 
+    override fun onResume() {
+        presenter.init()
+        super.onResume()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.favorites_menu, menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+
+            R.id.menuBtnOrderDate -> presenter.onOrderByDateClicked()
+            R.id.menuBtnOrderTitle -> presenter.onOrderByNameClicked()
+            R.id.menuBtnDelete -> presenter.onDeleteClicked()
+
+        }
+
+        return true
+    }
+
     override fun listPassed(movies: List<Movie>) {
         adapter.addMovies(movies)
+    }
+
+    override fun showDeleteDialog() {
+        val builder = AlertDialog.Builder(this.context)
+        builder.setMessage("Do you want to delete ALL your favorites?")
+            .setPositiveButton("Yes") { dialog, _ ->
+                dialog.dismiss()
+                presenter.delete()
+            }
+            .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
+        builder.create().show()
     }
 }
