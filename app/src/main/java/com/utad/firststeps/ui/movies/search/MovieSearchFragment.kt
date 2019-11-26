@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.utad.firststeps.R
+import com.utad.firststeps.data.remote.RetrofitFactory
+import com.utad.firststeps.data.remote.RetrofitRemoteRepository
 import com.utad.firststeps.model.Movie
 import com.utad.firststeps.ui.movies.MovieAdapter
 import com.utad.firststeps.ui.movies.detail.MovieDetailActivity
@@ -38,7 +40,7 @@ class MovieSearchFragment : Fragment(), MovieSearchView {
         }
         recyclerView.adapter = movieAdapter
 
-        val presenter = MovieSearchPresenter(this)
+        val presenter = MovieSearchPresenter(this, RetrofitRemoteRepository(RetrofitFactory.makeRetrofitService()))
 
         searchBar = view.findViewById(R.id.searchView)
         searchBar.queryHint = getString(R.string.search_hint)

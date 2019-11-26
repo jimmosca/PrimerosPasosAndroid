@@ -1,4 +1,4 @@
-package com.utad.firststeps.data
+package com.utad.firststeps.data.remote
 
 import com.utad.firststeps.model.MovieCredit
 import com.utad.firststeps.model.MovieDetail

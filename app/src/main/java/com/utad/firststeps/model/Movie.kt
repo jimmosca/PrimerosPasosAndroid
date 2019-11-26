@@ -1,20 +1,29 @@
 package com.utad.firststeps.model
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 const val posterBaseUrl = "http://image.tmdb.org/t/p/w342"
 const val backdrpBaseUrl = "http://image.tmdb.org/t/p/w780"
 //Search Fragment
+@Entity
 data class Movie(
     val poster_path: String,
-    val id: Int,
+    @PrimaryKey val id: Int,
     val original_title: String,
     val title: String,
     val vote_average: Double,
     val release_date: String
-)
+){
+    var dateCreated: Long = System.currentTimeMillis()
+}
 
 data class SearchResult(val results: List<Movie>)
 
 //MovieDetailActivity
 data class MovieDetail(
+    val original_title: String,
+    val poster_path: String,
     val backdrop_path: String,
     val title: String,
     val vote_average: Double,
